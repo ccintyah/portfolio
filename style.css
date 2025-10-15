@@ -1,0 +1,329 @@
+:root {
+  /* ice / light-blue accent */
+  --accent: #66d6ff;
+  --muted: #6b7280;
+  --bg: #0f172a;
+  --card: #0b1220;
+  --glass: rgba(255, 255, 255, 0.04);
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: #eef2ff;
+  background: linear-gradient(180deg, #061026 0%, #071027 60%);
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+header {
+  backdrop-filter: blur(6px);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0)
+  );
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 0 0 42px;
+  background: linear-gradient(135deg, var(--accent), #bfefff);
+  display: grid;
+  place-items: center;
+  color: #08203a;
+  font-weight: 700;
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cta {
+  background: var(--accent);
+  color: #081826;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Style the language selector to match header controls (no HTML changes) */
+#langSelect {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.04);
+  color: #eef2ff;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  /* add extra right padding so the arrow doesn't cover the text */
+  padding: 0.2rem 1.6rem 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  height: 32px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path fill='%23eef2ff' d='M0 0 L5 6 L10 0 Z'/></svg>");
+  background-repeat: no-repeat;
+  /* position the custom caret away from the text */
+  background-position: right 14px center;
+  background-size: 14px 10px;
+  background-clip: padding-box;
+  min-width: 56px; /* prevent the control from shrinking too small */
+}
+
+#langSelect:focus {
+  outline: none;
+  /* light-blue focus ring to match the new accent */
+  box-shadow: 0 0 0 3px rgba(102, 214, 255, 0.12);
+}
+
+/* Make the small label align and not wrap */
+label[for="langSelect"] {
+  white-space: nowrap;
+  margin-right: 0.35rem;
+}
+/* keep the select and its options readable on dark background */
+#langSelect,
+#langSelect option {
+  color: #eef2ff !important;
+  /* make option backgrounds solid on platforms that render native menus with transparency */
+  background-color: #071027 !important;
+}
+
+/* hide native arrow on some browsers so our svg caret doesn't overlap */
+#langSelect::-ms-expand {
+  display: none; /* IE/Edge */
+}
+#langSelect::-moz-focus-inner {
+  border: 0;
+}
+
+/* On Windows/Chromium the native select popup may render separately; this rule helps
+   ensure high contrast for options when the OS/compositor draws the menu */
+@supports (-webkit-touch-callout: none) {
+  #langSelect option {
+    background-color: #071027 !important;
+    color: #eef2ff !important;
+  }
+}
+/* Hero */
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.25rem 0;
+}
+.hero-left {
+  flex: 1;
+}
+.hero h1 {
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  margin: 0.1rem 0;
+}
+.hero p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+.hero-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+.btn {
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: transparent;
+  color: #e6eef8;
+}
+
+/* Back button spacing for detail page */
+.back-btn {
+  display: inline-block;
+  margin: 1.1rem 0 1.25rem; /* give it breathing room top and bottom */
+}
+.btn.secondary {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.04);
+}
+.hero-right {
+  flex: 0 0 220px;
+}
+.avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: var(--glass);
+  display: block;
+}
+
+/* Sections */
+section {
+  padding: 2rem 0;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+.card img {
+  width: 100%;
+  height: 200px; /* larger thumbnails so designs are clearer */
+  object-fit: cover; /* keep the grid tidy while showing a good crop */
+  border-radius: 8px;
+  transition: transform 220ms ease;
+}
+.card img:hover {
+  transform: scale(1.03);
+}
+
+/* Detail page image: show the whole design, fit within viewport */
+.detail-card img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain; /* show entire artwork */
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 1rem;
+}
+.card h3 {
+  margin: 0.5rem 0 0.25rem;
+}
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Contact */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1rem;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+input,
+textarea {
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: transparent;
+  color: inherit;
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-right {
+    width: 140px;
+    height: auto;
+  }
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+  .contact {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
+    display: none;
+  }
+  .mobile-toggle {
+    display: inline-flex;
+  }
+}
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: 1.1rem;
+}
+
+/* Modal preview */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal.open {
+  display: flex;
+}
+.modal img {
+  max-width: 90%;
+  /* leave room for sticky header so the image isn't visually obscured */
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(2, 6, 23, 0.8);
+}
+
+/* ensure modal sits above sticky header */
+.modal {
+  z-index: 9999;
+}

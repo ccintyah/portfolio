@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cintya Anjelika — Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio Cintya Anjelika — Desain Komunikasi Visual"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo">CA</div>
+          <div>
+            <div style="font-weight: 700">Cintya Anjelika</div>
+            <div
+              style="font-size: 0.85rem; color: var(--muted); margin-top: 2px"
+              data-i18n="brand_subtitle"
+            >
+              Desain Komunikasi Visual
+            </div>
+          </div>
+        </div>
+
+        <nav>
+          <button class="mobile-toggle" id="navToggle">☰</button>
+          <ul id="navList">
+            <li><a href="#projects" data-i18n="nav_projects">Portofolio</a></li>
+            <li><a href="#about" data-i18n="nav_about">Tentang</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Kontak</a></li>
+          </ul>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <label for="langSelect" class="muted" style="font-size: 0.9rem"
+            >Language</label
+          >
+          <select id="langSelect" aria-label="Pilih bahasa">
+            <option value="id">ID</option>
+            <option value="en">EN</option>
+          </select>
+          <a
+            class="cta"
+            href="../doc/CINTYA ANJELIKA.pdf"
+            target="_blank"
+            rel="noopener"
+            data-i18n="cta_download_cv"
+            >Unduh CV</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-left">
+          <h1 data-i18n="hero_title">Halo, saya Cintya Anjelika</h1>
+          <p data-i18n="hero_intro">
+            Saya merupakan lulusan Desain Komunikasi Visual yang fokus pada
+            desain editorial. Dapat membuat desain yang membantu cerita merek
+            terlihat jelas dan berkesan.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects" data-i18n="btn_view_portfolio"
+              >Lihat Portofolio</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <h2 data-i18n="projects_title">Portofolio</h2>
+          <p class="muted" data-i18n="projects_subtitle">
+            Proyek terpilih — mengedit foto, poster, dan desain cetak
+          </p>
+        </div>
+        <div class="grid projects-grid" style="margin-top: 1rem">
+          <article class="card">
+            <img src="reborn poster.jpg" alt="Proyek 1" loading="lazy" />
+            <h3 data-i18n="project1_title">
+              Poster Sepatu Aerostreet "Reborn"
+            </h3>
+            <p class="muted" data-i18n="project1_desc">
+              Proyek ini dibuat untuk tugas mata pelajaran Desain Percetakan,
+              dengan promosi produk fashion khususnya sepatu.
+            </p>
+            <div style="margin-top: 0.5rem">
+              <a href="detail.html?id=1" class="btn">Detail</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="pensi mb 2026.jpg" alt="Proyek 2" loading="lazy" />
+            <h3 data-i18n="project2_title">Poster Event</h3>
+            <p class="muted" data-i18n="project2_desc">
+              Proyek ini dibuat untuk tugas mata pelajaran Desain Percetakan,
+              dengan promosi acara pentas seni Sekolah Mutiara Bangsa 1.
+            </p>
+            <div style="margin-top: 0.5rem">
+              <a href="detail.html?id=2" class="btn">Detail</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="koran 1.jpg" alt="Proyek 3" loading="lazy" />
+            <h3 data-i18n="project3_title">Desain Layout Koran</h3>
+            <p class="muted" data-i18n="project3_desc">
+              Proyek ini dibuat untuk tugas mata pelajaran Desain Percetakan,
+              dengan membuat desain tata letak koran.
+            </p>
+            <div style="margin-top: 0.5rem">
+              <a href="detail.html?id=3" class="btn">Detail</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2 data-i18n="about_title">Tentang Saya</h2>
+        <div
+          class="grid"
+          style="
+            grid-template-columns: 1fr 320px;
+            gap: 1rem;
+            align-items: start;
+          "
+        >
+          <div>
+            <p data-i18n="about_intro">
+              Saya menyelesaikan pendidikan Sekolah Menengah Kejuruan saya di
+              SMK Mutiara Bangsa 1 di jurusan Desain Komunikasi Visual. Memiliki
+              pengalaman pelatihan desain grafis yang dibimbing oleh mentor
+              Universitas Multimedia Nusantara
+            </p>
+            <h4 data-i18n="skills_title">Keahlian</h4>
+            <ul class="muted">
+              <li data-i18n="skill1">Basic desain grafis</li>
+              <li data-i18n="skill2">Layout & Desain editorial</li>
+              <li data-i18n="skill3">
+                Adobe Photoshop / Illustrator / Premiere
+              </li>
+              <li data-i18n="skill4">Canva</li>
+              <li data-i18n="skill5">Basic Figma</li>
+            </ul>
+          </div>
+          <aside class="card">
+            <h4 data-i18n="documents_title">Dokumen</h4>
+            <p class="muted" data-i18n="documents_subtitle">
+              Beberapa dokumen penting bisa diunduh:
+            </p>
+            <ul style="padding-left: 1rem">
+              <li>
+                <a href="../doc/CINTYA ANJELIKA.pdf" target="_blank"
+                  >CV (PDF)</a
+                >
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 data-i18n="contact_title">Kontak</h2>
+        <div class="contact" style="margin-top: 1rem">
+          <div class="card">
+            <h4 data-i18n="info_title">Informasi</h4>
+            <p class="muted">
+              <span data-i18n="info_email_label">Email:</span>
+              <a href="mailto:anjelikacintya@gmail.com"
+                >anjelikacintya@gmail.com</a
+              >
+            </p>
+            <p class="muted" data-i18n="info_location">Lokasi: Indonesia</p>
+            <p class="muted" data-i18n="info_phone">
+              Telepon/WA: +62 895-3602-70715
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>&copy; <strong>Cintya Anjelika</strong> — 2025</div>
+        <div class="muted" data-i18n="footer_made_with">
+          Made with care • Desain Komunikasi Visual
+        </div>
+      </div>
+    </footer>
+
+    <div id="imgModal" class="modal" aria-hidden="true">
+      <img id="modalImg" alt="Preview" />
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
