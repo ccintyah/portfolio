@@ -64,25 +64,33 @@ header {
   font-weight: 700;
 }
 nav ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.cta {
-  background: var(--accent);
-  color: #081826;
-  padding: 0.45rem 0.75rem;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-/* Style the language selector to match header controls (no HTML changes) */
-#langSelect {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  /* mobile dropdown styling when JS toggles .open on nav list
+     use a flowing block under the header so it doesn't overlap content */
+  nav ul.open {
+    display: flex;
+    position: static;
+    width: 100%;
+    margin-top: 0.6rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0));
+    padding: 0.6rem 0.6rem;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: none;
+  }
+  /* make nav links full-width touch targets on mobile */
+  nav ul.open a {
+    display: block;
+    padding: 0.45rem 0.6rem;
+    border-radius: 6px;
+  }
+  /* slightly emphasize the mobile toggle for easier tapping */
+  .mobile-toggle {
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+  }
+  /* hide the right-hand hero box on small screens to reduce clutter */
+  .hero-right { display: none; }
   background: rgba(255, 255, 255, 0.04);
   color: #eef2ff;
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -298,10 +306,14 @@ footer {
     position: absolute;
     right: 1rem;
     top: 64px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.015)
+    );
     padding: 0.75rem 1rem;
     border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
     flex-direction: column;
     gap: 0.5rem;
     min-width: 160px;
