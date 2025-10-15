@@ -3,10 +3,12 @@ const navToggle = document.getElementById("navToggle");
 const navList = document.getElementById("navList");
 if (navToggle && navList) {
   navToggle.addEventListener("click", () => {
-    if (navList.style.display === "flex") navList.style.display = "";
-    else navList.style.display = "flex";
-    navList.style.flexDirection = "column";
-    navList.style.gap = "0.5rem";
+    // toggle the open class; CSS handles layout and visibility
+    navList.classList.toggle("open");
+  });
+  // close nav when clicking an item (mobile UX)
+  navList.addEventListener("click", (e) => {
+    if (e.target && e.target.tagName === "A") navList.classList.remove("open");
   });
 }
 
