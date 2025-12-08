@@ -185,4 +185,18 @@ if (langSelect) {
   applyTranslations(savedLang);
 }
 
-// Contact form removed — site keeps contact information but no client-side contact submission.
+// Save scroll position before navigating to project detail
+const projectLinks = document.querySelectorAll(".card .btn");
+projectLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    sessionStorage.setItem("scrollPosition", window.scrollY);
+  });
+});
+
+// Restore scroll position when navigating back
+window.addEventListener("load", () => {
+  const scrollPosition = sessionStorage.getItem("scrollPosition");
+  if (scrollPosition) {
+    window.scrollTo(0, parseInt(scrollPosition, 10));
+  }
+});
