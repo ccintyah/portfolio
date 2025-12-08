@@ -184,31 +184,3 @@ if (langSelect) {
 } else {
   applyTranslations(savedLang);
 }
-
-// Save scroll position before navigating to project detail
-const projectLinks = document.querySelectorAll(".card .btn");
-projectLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    sessionStorage.setItem("scrollPosition", window.scrollY);
-  });
-});
-
-// Ensure smooth scroll restoration without jumping to the top
-window.addEventListener("load", () => {
-  const scrollPosition = sessionStorage.getItem("scrollPosition");
-  if (scrollPosition) {
-    setTimeout(() => {
-      window.scrollTo(0, parseInt(scrollPosition, 10));
-    }, 0);
-  }
-});
-
-// Fix scroll restoration to prevent jumping up before returning to last scroll
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    const scrollPosition = sessionStorage.getItem("scrollPosition");
-    if (scrollPosition) {
-      window.scrollTo(0, parseInt(scrollPosition, 10));
-    }
-  }
-});
