@@ -7,7 +7,84 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header></header>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo">CA</div>
+          <div>
+            <div style="font-weight: 700">Cintya Anjelika</div>
+            <div
+              style="font-size: 0.85rem; color: var(--muted); margin-top: 2px"
+              data-i18n="brand_subtitle"
+            >
+              Informatika
+            </div>
+          </div>
+        </div>
+        <nav>
+          <button class="mobile-toggle" id="navToggle">☰</button>
+          <ul id="navList">
+            <li>
+              <a href="index.html" data-i18n="nav_projects">Portofolio</a>
+            </li>
+            <li>
+              <a href="index.html#about" data-i18n="nav_about">Tentang</a>
+            </li>
+            <li>
+              <a href="index.html#contact" data-i18n="nav_contact">Kontak</a>
+            </li>
+          </ul>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <label for="langSelect" class="muted" style="font-size: 0.9rem"
+            >Language</label
+          >
+          <select id="langSelect" aria-label="Pilih bahasa">
+            <option value="id">ID</option>
+            <option value="en">EN</option>
+          </select>
+          <a
+            class="cta"
+            href="../doc/CINTYA ANJELIKA.pdf"
+            target="_blank"
+            rel="noopener"
+            data-i18n="cta_download_cv"
+            >Unduh CV</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <a href="index.html" class="btn back-btn" data-i18n="btn_back"
+        >← Kembali</a
+      >
+      <article class="card detail-card">
+        <img id="detail-img" src="" alt="Detail image" />
+        <h2 id="detail-title">Project title</h2>
+        <p id="detail-desc">Project description</p>
+      </article>
+    </main>
+
+    <footer>
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>&copy; <strong>Cintya Anjelika</strong> — 2025</div>
+        <div class="muted" data-i18n="footer_made_with">
+          Made with care • Desain Komunikasi Visual
+        </div>
+      </div>
+    </footer>
+    <!-- modal for image preview on detail page -->
+    <div id="imgModal" class="modal" aria-hidden="true" style="display: none">
+      <img id="modalImg" alt="Preview" />
+    </div>
 
     <script src="js/script.js"></script>
     <script>
