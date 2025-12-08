@@ -193,10 +193,22 @@ projectLinks.forEach((link) => {
   });
 });
 
-// Restore scroll position when navigating back
+// Ensure smooth scroll restoration without jumping to the top
 window.addEventListener("load", () => {
   const scrollPosition = sessionStorage.getItem("scrollPosition");
   if (scrollPosition) {
-    window.scrollTo(0, parseInt(scrollPosition, 10));
+    setTimeout(() => {
+      window.scrollTo(0, parseInt(scrollPosition, 10));
+    }, 0);
+  }
+});
+
+// Fix scroll restoration to prevent jumping up before returning to last scroll
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const scrollPosition = sessionStorage.getItem("scrollPosition");
+    if (scrollPosition) {
+      window.scrollTo(0, parseInt(scrollPosition, 10));
+    }
   }
 });
